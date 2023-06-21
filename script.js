@@ -28,11 +28,11 @@ function handleDrop(e) {
 
 
 function doDrag(){
-    for(let i=1;i<=images.length;i++){
+    for(let index=1;index<=6;index++){
    
-      images[i].addEventListener('dragstart',handleDragStart)
-      images[i].addEventListener('dragover',handleDragOver)
-      images[i].addEventListener('drop',handleDrop)
+      images[index].addEventListener('dragstart',handleDragStart)
+      images[index].addEventListener('dragover',handleDragOver)
+      images[index].addEventListener('drop',handleDrop)
     }
 }
 
