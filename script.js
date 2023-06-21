@@ -20,6 +20,11 @@ function handleDrop(e) {
     let temp = window.getComputedStyle(selectedDiv).backgroundImage;
     selectedDiv.style.backgroundImage = window.getComputedStyle(this).backgroundImage;
     this.style.backgroundImage = temp;
+
+    // Not Working
+    // let temp = selectedDiv.style.cssText;
+    // selectedDiv.style.cssText=this.style.cssText;
+    // this.style.cssText= temp;
   }
   selectedDiv.classList.remove('selected');
   selectedDiv = null;
@@ -28,13 +33,12 @@ function handleDrop(e) {
 
 
 function doDrag(){
-    for(let index=1;index<=6;index++){
-   
-      images[index].addEventListener('dragstart',handleDragStart)
-      images[index].addEventListener('dragover',handleDragOver)
-      images[index].addEventListener('drop',handleDrop)
-    }
+  images.forEach((item)=>{
+    item.addEventListener('dragstart',handleDragStart)
+    item.addEventListener('dragover',handleDragOver)
+    item.addEventListener('drop',handleDrop)
+  })
 }
 
 
-doDrag())
+doDrag()
