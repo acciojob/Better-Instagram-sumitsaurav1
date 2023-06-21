@@ -28,12 +28,13 @@ function handleDrop(e) {
 
 
 function doDrag(){
-  images.forEach((item)=>{
-    item.addEventListener('dragstart',handleDragStart)
-    item.addEventListener('dragover',handleDragOver)
-    item.addEventListener('drop',handleDrop)
-  })
+    for(let i=1;i<=images.length;i++){
+   
+      images[i].addEventListener('dragstart',handleDragStart)
+      images[i].addEventListener('dragover',handleDragOver)
+      images[i].addEventListener('drop',handleDrop)
+    }
 }
 
 
-doDrag()
+doDrag())
